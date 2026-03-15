@@ -1,7 +1,7 @@
 # TODO
 
 - [X] Write main Python script, make sure it works
-- [ ] Create Dockerfile
+- [X] Create Dockerfile
 - [ ] Write GitHub Actions workflows
 - [ ] Add Dependabot configuration
 - [ ] Write documentation

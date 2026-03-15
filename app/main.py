@@ -21,7 +21,7 @@ class Execution(SQLModel, table=True):
 # SQL server details
 
 postgresql_username = os.getenv("POSTGRES_USER", default="postgres")
-postgresql_password = os.getenv("POSTGRES_PASSWORD")
+postgresql_password = os.getenv("POSTGRES_PASSWORD", default="")
 postgresql_host = os.getenv("POSTGRES_HOST", default="localhost")
 postgresql_port = os.getenv("POSTGRES_PORT", default="5432")
 postgresql_db = os.getenv("POSTGRES_DB", default="n8n")
