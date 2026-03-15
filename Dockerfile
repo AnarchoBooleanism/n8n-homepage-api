@@ -29,6 +29,7 @@ COPY app /app
 
 # Final details
 # Note: You will want to set POSTGRES_PASSWORD
+ENV FASTAPI_HOST="0.0.0.0"
 ENV FASTAPI_PORT="8000"
 ENV POSTGRES_USER="postgres"
 ENV POSTGRES_HOST="localhost"
