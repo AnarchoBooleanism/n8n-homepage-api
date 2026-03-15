@@ -1,0 +1,28 @@
+name: python-lint
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**' # Avoid issues with Dependabot
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**'
+
+jobs:
+  lint:
+    name: Python Lint # Naming the build is important to use it as a status check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - uses: advanced-security/python-lint-code-scanning-action@v1
+        with:
+          linter: ruff
+        continue-on-error: true
