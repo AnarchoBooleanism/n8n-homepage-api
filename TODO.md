@@ -2,8 +2,8 @@
 
 - [X] Write main Python script, make sure it works
 - [X] Create Dockerfile
-- [ ] Write GitHub Actions workflows
-- [ ] Add Dependabot configuration
+- [X] Write GitHub Actions workflows
+- [X] Add Dependabot configuration
 - [ ] Write documentation
     - [ ] Write Docker-related documentation
     - [ ] Write pip-related documentation, anything Python-related
