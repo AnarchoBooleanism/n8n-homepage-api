@@ -25,4 +25,5 @@ jobs:
       - uses: advanced-security/python-lint-code-scanning-action@v1
         with:
           linter: ruff
+          python-version: 3.12
         continue-on-error: true
