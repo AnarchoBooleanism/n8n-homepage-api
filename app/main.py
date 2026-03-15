@@ -1,4 +1,5 @@
 import os
+import urllib.parse
 from typing import Annotated
 from fastapi import Depends, FastAPI, HTTPException
 from contextlib import asynccontextmanager
@@ -21,7 +22,7 @@ class Execution(SQLModel, table=True):
 # SQL server details
 
 postgresql_username = os.getenv("POSTGRES_USER", default="postgres")
-postgresql_password = os.getenv("POSTGRES_PASSWORD", default="")
+postgresql_password = urllib.parse.quote(os.getenv("POSTGRES_PASSWORD", default=""), safe="") # Special characters can break URI
 postgresql_host = os.getenv("POSTGRES_HOST", default="localhost")
 postgresql_port = os.getenv("POSTGRES_PORT", default="5432")
 postgresql_db = os.getenv("POSTGRES_DB", default="n8n")
