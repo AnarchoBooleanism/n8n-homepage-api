@@ -28,6 +28,8 @@ RUN chmod +x /docker-entrypoint.sh
 COPY app /app
 
 # Final details
+# Note: You will want to set POSTGRES_PASSWORD
+ENV FASTAPI_PORT="8000"
 ENV POSTGRES_USER="postgres"
 ENV POSTGRES_HOST="localhost"
 ENV POSTGRES_PORT="5432"

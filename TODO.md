@@ -9,6 +9,6 @@
     - [ ] Write pip-related documentation, anything Python-related
     - [ ] Write about how to use, including environment variables
     - [ ] Write about reverse proxy setups
-- [ ] Write example Compose file
+- [X] Write example Compose file
 - [ ] Write unit/integration tests
 - [ ] See how we can make this work for other database types
