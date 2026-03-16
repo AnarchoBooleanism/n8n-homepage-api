@@ -1,5 +1,5 @@
 # n8n-homepage-api
-API server that provides n8n statistics to use for Homepage by querying its SQL server
+API server that provides statistics about n8n to use for Homepage by querying its SQL server 
 
 This supports at least Python 3.12, and uses FastAPI, SQLModel, and psycopg2. Currently, this server only supports the PostgreSQL backend, but support for other backends are planned for the future.
 
