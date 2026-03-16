@@ -168,7 +168,7 @@ fastapi --forwarded-allow-ips="192.168.0.1,192.168.0.2" run
 ### Running as a service
 If you prefer that the API server start on system startup, then you can create a dedicated service or scheduled task that loads the virtual environment in the PATH and then starts the FastAPI server.
 
-This is an example of what it would look like as a systemd service that starts a script:
+This is an example of what it would look like as a systemd service that starts the FastAPI server:
 ```ini
 [Unit]
 Description=n8n-homepage-api
