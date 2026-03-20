@@ -109,8 +109,8 @@ jobs:
         run: |
           IMAGE_NAME_LOWER=$(echo "${{ env.IMAGE_NAME }}" | tr '[:upper:]' '[:lower:]')
           docker buildx imagetools create $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
-            $(printf '${{ env.REGISTRY }}/${IMAGE_NAME_LOWER}@sha256:%s ' *)
+            $(printf '${{ env.REGISTRY }}/$IMAGE_NAME_LOWER@sha256:%s ' *)
       - name: Inspect Image
         run: |
           IMAGE_NAME_LOWER=$(echo "${{ env.IMAGE_NAME }}" | tr '[:upper:]' '[:lower:]')
-          docker buildx imagetools inspect ${{ env.REGISTRY }}/${IMAGE_NAME_LOWER}:${{ steps.meta.outputs.version }}
+          docker buildx imagetools inspect ${{ env.REGISTRY }}/$IMAGE_NAME_LOWER:${{ steps.meta.outputs.version }}
