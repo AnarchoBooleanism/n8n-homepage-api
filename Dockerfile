@@ -12,7 +12,7 @@ WORKDIR /app
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y update && \
     apt-get -y install --no-install-recommends \
-        bash tini && \
+        tini && \
     rm -rf /var/lib/apt/lists/*
 
 # Create Python virtual environment to install stuff in
