@@ -1,5 +1,5 @@
 # Container for running FastAPI in, with all necessary packages included
-FROM alpine:3.23.3
+FROM python:3.12-slim@sha256:3d5ed973e45820f5ba5e46bd065bd88b3a504ff0724d85980dcd05eab361fcf4
 
 # To be passed from Github Actions
 ARG GIT_VERSION_TAG=unspecified
@@ -8,9 +8,12 @@ ARG GIT_VERSION_HASH=unspecified
 
 WORKDIR /app
 
-# Install necessary Alpine packages
-RUN apk update
-RUN apk add --no-cache bash tini python3 py3-pip py3-virtualenv
+# Install necessary Debian packages
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get -y update && \
+    apt-get -y install --no-install-recommends \
+        bash tini && \
+    rm -rf /var/lib/apt/lists/*
 
 # Create Python virtual environment to install stuff in
 ENV VIRTUAL_ENV="/opt/venv"
