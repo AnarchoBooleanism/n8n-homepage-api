@@ -30,4 +30,4 @@ updates:
           - "pydantic"
           - "pydantic-extra-types"
           - "pydantic-settings"
-          - "pydantic_core"
+          - "pydantic-core"
