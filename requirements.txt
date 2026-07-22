@@ -31,7 +31,7 @@ PyYAML==6.0.3
 rich==15.0.0
 rich-toolkit==0.20.1
 rignore==0.7.6
-sentry-sdk==2.65.0
+sentry-sdk==2.66.0
 shellingham==1.5.4
 SQLAlchemy==2.0.49
 sqlmodel==0.0.38
