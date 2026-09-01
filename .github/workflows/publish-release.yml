@@ -1,0 +1,39 @@
+name: Create release upon tag creation
+
+on: # Only run on new version tag push
+  push:
+    tags: [ v* ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+permissions:
+  contents: write
+  
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Create GitHub Release
+        id: create-release
+        uses: softprops/action-gh-release@v3
+        with:
+          draft: true
+          generate_release_notes: true
+      - name: Create GitHub Release notification summary
+        run: |
+          printf "# 🎉 Release ready!\n\n" >> $GITHUB_STEP_SUMMARY
+          printf "The link to the release (tag **%s**, ID **%s**) is: %s\n\n" \
+            "${{ github.ref_name }}" \
+            "${{ steps.create-release.outputs.id }}" \
+            "${{ steps.create-release.outputs.url }}" \
+            >> $GITHUB_STEP_SUMMARY
+          printf "In order for the Docker build and push workflow to commence, \
+          you will need to publish the release.\n\n" \
+            >> $GITHUB_STEP_SUMMARY
+          printf "Generated at: %s\n" \
+            "$(date -u +"%Y-%m-%d %H:%M:%S UTC")" \
+            >> $GITHUB_STEP_SUMMARY
