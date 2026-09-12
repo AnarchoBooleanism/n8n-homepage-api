@@ -1,5 +1,5 @@
 {
-  // NOTE: This should be able to catch github-releases and dockerfile!
+  // NOTE: This should be able to catch github-actions and dockerfile!
 
   // Overall Renovate config
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
@@ -12,6 +12,14 @@
   // NOTE: Renovate does NOT support minute granularity, so it is specified as "*"
   "schedule": ["* 6 * * 1"], // Every Monday at 6:00 AM
   "prHourlyLimit": 0,
+
+  // Package rules
+  "packageRules": [
+    // Main
+    {
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"]
+    }
+  ],
 
   // Other rules
   "ignorePaths": [
