@@ -21,8 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
-      - uses: advanced-security/python-lint-code-scanning-action@v1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: advanced-security/python-lint-code-scanning-action@935afeca136966a98a6821b73d4ae02aab9f339b # v1
         with:
           linter: ruff
           python-version: 3.12
