@@ -7,6 +7,41 @@
     "github>AnarchoBooleanism/renovate-config#v4.0.0"
   ],
 
+  "packageRules": [
+    // Package groups (for tightly-bound packages)
+    {
+      "groupName": "annotated",
+      "matchPackageNames": [
+        "annotated-doc",
+        "annotated-types"
+      ]
+    },
+    {
+      "groupName": "fastapi",
+      "matchPackageNames": [
+        "fastapi",
+        "fastapi-cli",
+        "fastapi-cloud-cli"
+      ]
+    },
+    {
+      "groupName": "pydantic",
+      "matchPackageNames": [
+        "pydantic",
+        "pydantic-extra-types",
+        "pydantic-settings",
+        "pydantic_core"
+      ]
+    },
+    {
+      "groupName": "sql",
+      "matchPackageNames": [
+        "SQLAlchemy",
+        "sqlmodel"
+      ]
+    }
+  ],
+
   // Other rules
   "ignorePaths": [
     "compose.yaml" // Is example file
