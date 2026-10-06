@@ -1,5 +1,5 @@
 # Container for running FastAPI in, with all necessary packages included
-FROM python:3.14-slim@sha256:caaf356f40667c496d405780745b9ac25771c189a51dfcc42430d531ea09f8a2
+FROM python:3.14-slim@sha256:f85c5697265c178cc6887276c55fe16cf3d14ca35c3df6a5eab3b360534a55d2
 
 # To be passed from Github Actions
 ARG GIT_VERSION_TAG=unspecified
