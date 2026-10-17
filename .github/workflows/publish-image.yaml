@@ -134,7 +134,7 @@ jobs:
           printf "digest=%s\n" "$digest" >> $GITHUB_OUTPUT
           printf "Digest is: %s\n" "$digest"
       - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4
         with:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           subject-digest: ${{ steps.push.outputs.digest }}
